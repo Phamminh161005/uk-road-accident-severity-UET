@@ -32,13 +32,17 @@ SOURCES: dict[str, tuple[str, Path]] = {
         RAW_DIR,
     ),
     "data_guide": (
-        f"{GOV_ASSETS}/6ab2a71d997a4b2950cced58/"
-        "dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx",
+        (
+            f"{GOV_ASSETS}/6ab2a71d997a4b2950cced58/"
+            "dft-road-casualty-statistics-road-safety-open-dataset-data-guide-2025.xlsx"
+        ),
         REFERENCE_DIR,
     ),
     "severity_guidance": (
-        f"{GOV_ASSETS}/691c644021ef5aaa6543eef0/"
-        "dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx",
+        (
+            f"{GOV_ASSETS}/691c644021ef5aaa6543eef0/"
+            "dft-road-casualty-statistics-severity-adjustment-figure-guidance.docx"
+        ),
         REFERENCE_DIR,
     ),
 }

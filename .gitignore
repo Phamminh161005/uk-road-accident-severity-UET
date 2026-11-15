@@ -11,6 +11,10 @@ data/processed/*
 !data/processed/.gitkeep
 !data/processed/agg/
 
+# Reference files: downloaded (Data Guide) or generated (codebook.csv); recreate with src/etl
+data/reference/*
+!data/reference/.gitkeep
+
 # Large/binary files anywhere
 *.csv.gz
 *.zip
