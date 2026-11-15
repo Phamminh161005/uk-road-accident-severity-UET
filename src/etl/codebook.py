@@ -92,7 +92,10 @@ def _normalise_code(value: object) -> str | None:
 
 def build_codebook(guide_path: Path = DATA_GUIDE) -> pd.DataFrame:
     """Read the Data Guide and return one row per (table, field, code) with its label and missing flag."""
-    guide = pd.read_excel(guide_path, sheet_name=GUIDE_SHEET, dtype=object)
+    # keep_default_na=False: labels such as "None" (= no hazard) must stay text, not become NaN.
+    guide = pd.read_excel(
+        guide_path, sheet_name=GUIDE_SHEET, dtype=object, keep_default_na=False, na_values=[""]
+    )
     guide = guide.rename(columns={"field name": "guide_field", "code/format": "code"})
     guide = guide[guide["table"].isin(TABLES)].copy()
 
