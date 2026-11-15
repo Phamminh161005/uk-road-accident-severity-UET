@@ -1,0 +1,38 @@
+# Markdown: only README.md goes to GitHub (rules, tasks, decisions, logs stay local)
+*.md
+!README.md
+
+# Raw data (never commit; downloaded from DfT / CEDA)
+data/raw/*
+!data/raw/.gitkeep
+
+# Processed data (large; regenerate with src/etl). Small aggregates for the web are allowed.
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/agg/
+
+# Large/binary files anywhere
+*.csv.gz
+*.zip
+*.parquet
+!data/processed/agg/*.parquet
+*.duckdb
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets / local config
+.env
+.streamlit/secrets.toml
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
