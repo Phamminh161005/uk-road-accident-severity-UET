@@ -45,6 +45,11 @@ SOURCES: dict[str, tuple[str, Path]] = {
         ),
         REFERENCE_DIR,
     ),
+    # RAS summary tables (Excel bundle), used only to cross-check yearly totals.
+    "ras_tables": (
+        f"{GOV_ASSETS}/6a873e258346e5bc7c6db222/ras-all-tables-excel.zip",
+        REFERENCE_DIR,
+    ),
 }
 
 
