@@ -22,6 +22,9 @@ data/reference/*
 !data/processed/agg/*.parquet
 *.duckdb
 
+# Generated exports (rebuild from notebooks with nbconvert)
+reports/html/
+
 # Python
 .venv/
 venv/
