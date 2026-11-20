@@ -1,0 +1,67 @@
+column,dtype,missing_share,n_unique,examples
+collision_index,string,0.0,513801,202417H105824; 202517M115025; 202517L306225
+collision_year,Int64,0.0,5,2021 – 2025
+collision_ref_no,string,0.0,510837,340NN2472; 340NN3412; 340NN3492
+location_easting_osgr,float64,0.0001,245276,67564.0 – 655345.0
+location_northing_osgr,float64,0.0001,263601,10211.0 – 1179892.0
+longitude,float64,0.0001,437862,-7.486852 – 1.759829
+latitude,float64,0.0001,412450,49.91221 – 60.500008
+police_force,category,0.0,44,Metropolitan Police; West Midlands; Police Scotland
+collision_severity,category,0.0,3,Slight; Serious; Fatal
+number_of_vehicles,int64,0.0,19,1 – 26
+number_of_casualties,int64,0.0,26,1 – 142
+date,datetime64[us],0.0,1826,2021-01-01 00:00:00 – 2025-12-31 00:00:00
+day_of_week,category,0.0,7,Friday; Thursday; Wednesday
+local_authority_ons_district,string,0.0,370,E08000025; E08000035; E09000033
+local_authority_highway,string,0.0,211,E10000016; E10000030; E10000012
+local_authority_highway_current,string,0.0,208,E10000016; E10000030; E10000012
+first_road_class,category,0.0,6,A; Unclassified; B
+first_road_number,float64,0.0,3615,0.0 – 9999.0
+road_type,category,0.0254,5,Single carriageway; Dual carriageway; Roundabout
+speed_limit,Int64,0.0,6,20 – 70
+junction_detail,category,0.0417,6,Not at junction or within 20 metres; T or staggered junction; Crossroads
+junction_control,category,0.0289,5,Give way or uncontrolled; Not at junction or within 20 metres; Auto traffic signal
+second_road_class,category,0.0226,7,Unclassified; Not at junction or within 20 metres; A
+second_road_number,float64,0.3466,3355,0.0 – 9999.0
+pedestrian_crossing,category,0.0465,8,No physical crossing facility within 50m; Pedestrian phase at traffic signal; Pedestrian light crossing (pelican or puffin or toucan or similar)
+light_conditions,category,0.0001,5,Daylight; Darkness - lights lit; Darkness - no lighting
+weather_conditions,category,0.0284,8,Fine no high winds; Raining no high winds; Other
+road_surface_conditions,category,0.0199,5,Dry; Wet or damp; Frost or ice
+special_conditions_at_site,category,0.3152,8,None; Roadworks; Auto traffic signal - out
+carriageway_hazards,category,0.0371,12,None; Roadworks; Other object in carriageway
+urban_or_rural_area,category,0.0001,2,Urban; Rural
+did_police_officer_attend_scene_of_accident,category,0.0,3,Yes; No - accident was reported using a self completion  form (self rep only); No
+trunk_road_flag,category,0.0707,2,Non-trunk; Trunk (Roads managed by Highways England)
+lsoa_of_accident_location,string,0.0,35630,-1; E01032739; E01004736
+enhanced_severity_collision,category,0.3985,5,Slight; Less Serious; Moderately Serious
+collision_injury_based,boolean,0.0,2,True; False
+collision_adjusted_severity_serious,float64,0.0,25538,0.0 – 1.0
+collision_adjusted_severity_slight,float64,0.0,25539,0.0 – 1.0
+hour,Int8,0.0,24,0 – 23
+month,int8,0.0,12,1 – 12
+datetime,datetime64[us],0.0,389260,2021-01-01 00:17:00 – 2025-12-31 23:59:00
+country,category,0.0,3,England; Scotland; Wales
+ksi_raw,int8,0.0,2,0 – 1
+ksi_adj,float64,0.0,25538,0.0 – 1.0
+n_vehicles_recorded,int64,0.0,19,1 – 26
+has_escooter,bool,0.0,2,False; True
+min_driver_age,float64,0.0538,100,1.0 – 100.0
+max_driver_age,float64,0.0538,102,1.0 – 105.0
+has_young_driver,bool,0.0,2,False; True
+has_older_driver,bool,0.0,2,False; True
+has_pedal_cycle,bool,0.0,2,False; True
+has_motorcycle,bool,0.0,2,False; True
+has_car,bool,0.0,2,True; False
+has_bus_coach,bool,0.0,2,False; True
+has_light_goods,bool,0.0,2,False; True
+has_heavy_goods,bool,0.0,2,False; True
+has_other,bool,0.0,2,False; True
+has_unknown,bool,0.0,2,False; True
+n_casualties_recorded,int64,0.0,26,1 – 142
+has_pedestrian_casualty,bool[pyarrow],0.0,2,False – True
+has_cyclist_casualty,bool[pyarrow],0.0,2,False – True
+has_motorcyclist_casualty,boolean,0.0,2,False; True
+has_child_casualty,bool,0.0,2,False; True
+has_older_casualty,bool,0.0,2,False; True
+min_casualty_age,float64,0.0163,102,0.0 – 105.0
+max_casualty_age,float64,0.0163,103,0.0 – 105.0

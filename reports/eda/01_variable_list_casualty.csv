@@ -1,0 +1,43 @@
+column,dtype,missing_share,n_unique,examples
+collision_index,string,0.0,513801,2025052501204; 2023520300610; 2025041681268
+collision_year,Int64,0.0,5,2021 – 2025
+collision_ref_no,string,0.0,510837,052501204; 520300610; 041681268
+vehicle_reference,Int64,0.0,38,1 – 992
+casualty_reference,Int64,0.0,145,1 – 999
+casualty_class,category,0.0,3,Driver or rider; Passenger; Pedestrian
+sex_of_casualty,category,0.0099,2,Male; Female
+age_of_casualty,float64,0.0216,103,0.0 – 105.0
+age_band_of_casualty,category,0.0216,11,26 - 35; 36 - 45; 46 - 55
+casualty_severity,category,0.0,3,Slight; Serious; Fatal
+pedestrian_location,category,0.0142,10,"Not a Pedestrian; In carriageway, crossing elsewhere; Crossing on pedestrian crossing facility"
+pedestrian_movement,category,0.0418,9,Not a Pedestrian; Crossing from driver's nearside; Crossing from driver's offside
+car_passenger,category,0.0055,3,Not car passenger; Front seat passenger; Rear seat passenger
+bus_or_coach_passenger,category,0.001,5,Not a bus or coach passenger; Seated passenger; Standing passenger
+pedestrian_road_maintenance_worker,category,0.0551,2,No / Not applicable; Yes
+casualty_type,category,0.0001,22,Car occupant; Pedestrian; Cyclist
+casualty_imd_decile,category,0.1122,10,More deprived 10-20%; Most deprived 10%; More deprived 20-30%
+lsoa_of_casualty,string,0.0,36519,-1; E01019456; E01003666
+enhanced_casualty_severity,category,0.347,5,Slight; Less Serious; Moderately Serious
+casualty_injury_based,boolean,0.0,2,True; False
+casualty_adjusted_severity_serious,float64,0.0,24545,0.0 – 1.0
+casualty_adjusted_severity_slight,float64,0.0,24545,0.0 – 1.0
+casualty_distance_banding,category,0.6565,5,Collision occurred within 5km of casualties home postcode; Collision occurred between 5.001 and 10km of casualties home postcode; Collision occurred between 20.001 and 100km of casualties home postcode
+escooter_flag,boolean,0.0,2,False; True
+ksi_raw,int8,0.0,2,0 – 1
+ksi_adj,float64,0.0,24545,0.0 – 1.0
+casualty_vehicle_group,category,0.0,8,car; motorcycle; pedal_cycle
+date,datetime64[us],0.0,1826,2021-01-01 00:00:00 – 2025-12-31 00:00:00
+month,int8,0.0,12,1 – 12
+hour,Int8,0.0,24,0 – 23
+day_of_week,category,0.0,7,Friday; Thursday; Wednesday
+country,category,0.0,3,England; Scotland; Wales
+police_force,category,0.0,44,Metropolitan Police; West Midlands; Police Scotland
+local_authority_ons_district,string,0.0,370,E08000025; E08000035; E08000032
+speed_limit,float64,0.0,6,20.0 – 70.0
+road_type,category,0.0217,5,Single carriageway; Dual carriageway; Roundabout
+urban_or_rural_area,category,0.0001,2,Urban; Rural
+light_conditions,category,0.0001,5,Daylight; Darkness - lights lit; Darkness - no lighting
+weather_conditions,category,0.0244,8,Fine no high winds; Raining no high winds; Other
+road_surface_conditions,category,0.0169,5,Dry; Wet or damp; Frost or ice
+junction_detail,category,0.0376,6,Not at junction or within 20 metres; T or staggered junction; Crossroads
+collision_injury_based,boolean,0.0,2,True; False

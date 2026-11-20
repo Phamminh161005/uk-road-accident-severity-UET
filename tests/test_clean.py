@@ -136,6 +136,25 @@ def test_country_and_coordinates():
     assert np.isnan(out["latitude"].iloc[2])
 
 
+def test_fill_junction_control_only_when_not_at_junction():
+    df = pd.DataFrame(
+        {
+            "junction_detail": pd.Categorical(
+                [clean.NOT_AT_JUNCTION, clean.NOT_AT_JUNCTION, "Crossroads", None],
+                categories=[clean.NOT_AT_JUNCTION, "Crossroads"],
+            ),
+            "junction_control": pd.Categorical(
+                [None, "Auto traffic signal", None, None], categories=["Auto traffic signal"]
+            ),
+        }
+    )
+    out = clean.fill_junction_control(df)
+    assert out["junction_control"].iloc[0] == clean.NOT_AT_JUNCTION
+    assert out["junction_control"].iloc[1] == "Auto traffic signal"  # recorded value kept
+    assert pd.isna(out["junction_control"].iloc[2])  # at a junction: still genuinely missing
+    assert pd.isna(out["junction_control"].iloc[3])  # junction unknown: stays missing
+
+
 def test_check_table_rejects_duplicate_keys():
     df = pd.DataFrame({"collision_index": ["A", "A"], "collision_year": [2021, 2021]})
     with pytest.raises(ValueError, match="duplicated keys"):

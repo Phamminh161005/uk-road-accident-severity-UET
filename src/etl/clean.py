@@ -174,7 +174,28 @@ def add_collision_fields(df: pd.DataFrame, force_code: pd.Series) -> pd.DataFram
 
     in_gb = df["latitude"].between(*GB_LAT) & df["longitude"].between(*GB_LON)
     df.loc[~in_gb, ["latitude", "longitude"]] = np.nan
+    if "junction_control" in df and "junction_detail" in df:
+        df = fill_junction_control(df)
     return add_ksi(df, "collision_severity", "collision_adjusted_severity_serious")
+
+
+NOT_AT_JUNCTION = "Not at junction or within 20 metres"
+
+
+def fill_junction_control(df: pd.DataFrame) -> pd.DataFrame:
+    """Blank junction_control is 'not applicable' when the collision was not at a junction (D-011).
+
+    Police leave junction_control as -1 for ~214k collisions not at a junction; the Data Guide's
+    code 0 label for this case is used instead of treating them as missing.
+    """
+    # fillna(False): a missing junction_detail must not count as "not at junction".
+    not_at_junction = (df["junction_detail"].astype("string") == NOT_AT_JUNCTION).fillna(False)
+    fill = not_at_junction.astype(bool) & df["junction_control"].isna()
+    control = df["junction_control"]
+    if NOT_AT_JUNCTION not in control.cat.categories:
+        control = control.cat.add_categories([NOT_AT_JUNCTION])
+    df["junction_control"] = control.mask(fill, NOT_AT_JUNCTION)
+    return df
 
 
 def clean_all(codebook: pd.DataFrame | None = None) -> tuple[dict[str, pd.DataFrame], dict]:
